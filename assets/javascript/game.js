@@ -1,5 +1,5 @@
 // creates array that computer selects choice from
-let computerChoices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+computerChoices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 // defines variables used in scoreboard
 let wins = 0;
@@ -18,11 +18,11 @@ var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.l
 // event occurs when user releases a key on the keyboard
 document.onkeyup = function (event) {
 
-    // the user keystroke is the event; also ensures input is read as upper case
+    // the user keystroke is the event; also ensures input is read as upper case to match computerChoices array
     let userGuess = event.key;
     userGuess = userGuess.toUpperCase();
 
-    // populates the letters_guessed array with user input for onscreen display
+    // populates the letters_guessed array with user input for display in the "Your guesses so far: "
     letters_guessed.push(userGuess);
 
     // displays user & computer guesses to the console.log
@@ -32,14 +32,12 @@ document.onkeyup = function (event) {
     if (userGuess === computerGuess) {
         wins++;
         guesses_left = 9;
-        //resets letters_guessed array to 0
         letters_guessed.length = 0;
 
         // user conditions for loss
-    } else if (userGuess != computerGuess && guesses_left == 0) {
+    } else if (userGuess != computerGuess && guesses_left === 1) {
         losses++;
         guesses_left = 9;
-        //resets letters_guessed array to 0
         letters_guessed.length = 0;
 
         // user conditions for incorrect guess

@@ -1,33 +1,38 @@
 html {
-    background-image: url("../images/ball-2049981_1920.jpg");
+    background-image: url("../images/bad-zwischenahn-2015386_1920.jpg");
     background-size: 1560px;
 }
 
 body {
     margin-left: 25px;
-    margin-top: 35px;
+    margin-top: 20px;
     font-weight: bold;
+
+}
+
+h1 {
+    font-size: 95px;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(10, 60, 150, 0.8);
+    text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
+}
+
+h2 {
+    font-size: 37px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    padding: 10px;
+    opacity: .7;
+    margin-right: 200px;
 
 }
 
 .scoreboard {
     background-color: white;
     padding: 10px;
-    opacity: .8;
-    margin-right: 100px;
-}
-
-h1 {
-    font-size: 85px;
-    font-style: italic;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: darkblue;
-}
-
-h2 {
-    font-size: 37px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    opacity: .7;
+    margin-right: 200px;
 }
 
 p {

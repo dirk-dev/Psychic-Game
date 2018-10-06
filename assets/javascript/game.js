@@ -13,6 +13,12 @@ let lettersGuessed = [];
 //Math.random returns a number between 0 and 1, and Math.floor changes it to an integer 
 let computerGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
 
+function reset() {
+    guessesLeft = 9;
+    lettersGuessed.length = 0;
+    computerGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
+}
+
 // event occurs when user releases a key on the keyboard
 document.onkeyup = function (event) {
 
@@ -20,28 +26,31 @@ document.onkeyup = function (event) {
     let userGuess = event.key;
     userGuess = userGuess.toUpperCase();
 
-    // populates the letters_guessed array with user input for display in the "Your guesses so far: "
-    lettersGuessed.push(userGuess);
-
     // displays user & computer guesses to the console.log
     console.log("user guess = " + userGuess + " computer guess = " + computerGuess);
 
-    // user conditions for win
-    if (userGuess === computerGuess) {
-        wins++;
-        guessesLeft = 9;
-        lettersGuessed.length = 0;
+    // warns user if they chose the same letter again
+    // also populates the letters_guessed array with user input 
+    if (lettersGuessed.includes(userGuess) == true) {
+        alert("You already chose that letter. Please choose another.");
 
-        // user conditions for loss
-    } else if (userGuess != computerGuess && guessesLeft === 1) {
-        losses++;
-        guessesLeft = 9;
-        lettersGuessed.length = 0;
-
-        // incorrect guess reduces guesses left by 1
     } else {
-        guessesLeft--;
+        lettersGuessed.push(userGuess);
 
+        // user conditions for win
+        if (userGuess === computerGuess) {
+            wins++;
+            reset();
+
+            // user conditions for loss
+        } else if (userGuess !== computerGuess && guessesLeft === 1) {
+            losses++;
+            reset();
+        }
+        // incorrect guess reduces guesses left by 1
+        else {
+            guessesLeft--;
+        }
     }
 
     //updates the onscreen scoreboard

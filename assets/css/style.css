@@ -14,7 +14,7 @@ h1 {
     font-size: 82px;
     font-style: italic;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgba(10, 60, 150, 0.8);
+    color: rgba(10, 60, 150, 0.9);
     text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
 }
 
@@ -31,7 +31,7 @@ h2 {
 .scoreboard {
     background-color: white;
     padding: 10px;
-    opacity: .7;
+    opacity: .85;
     margin-right: 200px;
 }
 
@@ -39,5 +39,62 @@ p {
     font-size: 30px;
     line-height: 35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+@media screen and (max-width: 980px) {}
+
+@media screen and (max-width: 768px) {
+    html {
+        background-size: 1200px;
+    }
+
+    h1 {
+        font-size: 72px;
+    }
+
+    h2 {
+        font-size: 28px;
+        padding: 10px;
+        margin-right: 145px;
+
+    }
+
+    .scoreboard {
+        padding: 10px;
+        opacity: .85;
+        margin-right: 145px;
+    }
+
+    p {
+        font-size: 26px;
+        line-height: 35px;
+    
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        background-size: auto;
+        background-position: 35% 15%;
+    }
+
+     h2 {
+        font-size: 28px;
+        padding: 10px;
+        margin-right: 35px;
+
+    }
+
+    .scoreboard {
+        margin-right: 35px;
+    }
+
+    p {
+        font-size: 26px;
+        line-height: 30px;
+    
+    }
 
 }

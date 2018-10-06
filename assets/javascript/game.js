@@ -8,12 +8,10 @@ let guesses_left = 9;
 
 //creates an array to store user guesses & logs to console
 let letters_guessed = [];
-console.log("letters guessed: " + letters_guessed);
 
 // computer randomly chooses from the computerChoices array
 //Math.random returns a number between 0 and 1, and Math.floor changes it to an integer 
-
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 // event occurs when user releases a key on the keyboard
 document.onkeyup = function (event) {
@@ -40,7 +38,7 @@ document.onkeyup = function (event) {
         guesses_left = 9;
         letters_guessed.length = 0;
 
-        // user conditions for incorrect guess
+        // incorrect guess reduces guesses left by 1
     } else {
         guesses_left--;
 

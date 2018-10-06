@@ -13,6 +13,7 @@ let lettersGuessed = [];
 //Math.random returns a number between 0 and 1, and Math.floor changes it to an integer 
 let computerGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
 
+//function to run to reset the game after a win/loss
 function reset() {
     guessesLeft = 9;
     lettersGuessed.length = 0;
@@ -22,19 +23,14 @@ function reset() {
 // event occurs when user releases a key on the keyboard
 document.onkeyup = function (event) {
 
-    // the user keystroke is the event; also ensures input is read as upper case to match computerChoices array
+    // the user keystroke is the event; also ensures input is read as upper case 
+    //to match computerChoices array
     let userGuess = event.key;
     userGuess = userGuess.toUpperCase();
 
-    // displays user & computer guesses to the console.log
-    console.log("user guess = " + userGuess + " computer guess = " + computerGuess);
-
-    // warns user if they chose the same letter again
-    // also populates the letters_guessed array with user input 
-    if (lettersGuessed.includes(userGuess) == true) {
-        alert("You already chose that letter. Please choose another.");
-
-    } else {
+    // only populates the letters_guessed array with user input 
+    //if the letter has not already been chosen
+    if (lettersGuessed.includes(userGuess) != true) {
         lettersGuessed.push(userGuess);
 
         // user conditions for win

@@ -56,3 +56,6 @@ document.onkeyup = function (event) {
     document.getElementById('guesses_current').innerHTML = "Your guesses so far: " + lettersGuessed;
 
 }
+
+//Link to updated portfolio with this game added to the portfolio page:
+// https://dirk-kiesewetter.github.io/Responsive-Portfolio/portfolio.html
